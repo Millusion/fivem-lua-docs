@@ -547,9 +547,9 @@ function RemoveAllCoverBlockingAreas() end
 ---
 --- @hash 0x58C70CF3A41E4AE7
 --- @param taskSequenceId number (int)
---- @param repeat boolean
+--- @param repeat_ boolean
 --- @return void
-function SetSequenceToRepeat(taskSequenceId, repeat) end
+function SetSequenceToRepeat(taskSequenceId, repeat_) end
 
     
 --- GetTaskMoveNetworkEvent
