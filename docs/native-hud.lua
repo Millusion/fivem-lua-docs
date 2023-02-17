@@ -5946,9 +5946,9 @@ function ThefeedGetFirstVisibleDeleteRemaining() end
 ---
 --- @hash 0x63145D9C883A1A70
 --- @param start number (float)
---- @param end number (float)
+--- @param end_ number (float)
 --- @return void
-function SetTextWrap(start, end) end
+function SetTextWrap(start, end_) end
 
     
 --- ThefeedPause

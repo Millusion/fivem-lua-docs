@@ -3,17 +3,17 @@
 --- @class Cam
 local Cam = {};
 
---- @class Entity
-local Entity = {};
+--- @class _Entity
+local _Entity = {};
 
---- @class Player : Entity
-local Player = {};
+--- @class _Player : Entity
+local _Player = {};
 
---- @class Vehicle : Entity
-local Vehicle = {};
+--- @class _Vehicle : Entity
+local _Vehicle = {};
 
---- @class Ped
-local Ped = {};
+--- @class _Ped
+local _Ped = {};
 
 --- @class Hash
 local Hash = {};
@@ -140,7 +140,7 @@ function RegisterNetEvent(eventName) end
 
 --- Register a NUI callback method
 --- @param type string
---- @param fun(data:table):void
+--- @param fun(table):void
 --- @return void
 function RegisterNUICallback(type, callback) end
 
