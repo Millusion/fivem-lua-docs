@@ -39,7 +39,7 @@ jobs:
         release_name: Release ${{ github.event.inputs.tags }}
         body: |
           Changes in this Release
-          - build date  ${{ github.event.inputs.tags }}
+          - build date  ${{ inputs.tags }}
           - based on 
           - * https://runtime.fivem.net/doc/natives_cfx.json
           - * https://runtime.fivem.net/doc/natives.json
