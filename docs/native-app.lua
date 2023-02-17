@@ -1,73 +1,10 @@
 
---- AppCloseBlock
+--- AppClearBlock
 ---
---- @hash 0xE8E3FCF72EAC0EF8
----
---- @return void
-function AppCloseBlock() end
-
-    
---- AppGetFloat
----
---- @hash 0x1514FB24C02C2322
---- @param property string (char*)
---- @return number (float)
-function AppGetFloat(property) end
-
-    
---- ```
---- NativeDB Return Type: BOOL
---- ```
----
---- @hash 0x846AA8E7D55EE5B6
----
---- @return number (int)
-function AppDataValid() end
-
-    
---- AppSetFloat
----
---- @hash 0x25D7687C68E0DAA4
---- @param property string (char*)
---- @param value number (float)
---- @return void
-function AppSetFloat(property, value) end
-
-    
---- AppHasLinkedSocialClubAccount
----
---- @hash 0x71EEE69745088DA0
----
---- @return boolean
-function AppHasLinkedSocialClubAccount() end
-
-    
---- AppSetInt
----
---- @hash 0x607E8E3D3E4F9611
---- @param property string (char*)
---- @param value number (int)
---- @return void
-function AppSetInt(property, value) end
-
-    
---- AppSaveData
----
---- @hash 0x95C5D356CDA6E85F
+--- @hash 0x5FE1DF3342DB7DBA
 ---
 --- @return void
-function AppSaveData() end
-
-    
---- ```
---- NativeDB Parameter 0: char* property
---- NativeDB Return Type: int
---- ```
----
---- @hash 0xD3A58A12C77D9D4B
---- @param property table (ScrHandle)
---- @return void
-function AppGetInt(property) end
+function AppClearBlock() end
 
     
 --- AppCloseApp
@@ -78,20 +15,20 @@ function AppGetInt(property) end
 function AppCloseApp() end
 
     
---- AppGetDeletedFileStatus
+--- AppCloseBlock
 ---
---- @hash 0xC9853A2BE3DED1A6
+--- @hash 0xE8E3FCF72EAC0EF8
 ---
---- @return number (int)
-function AppGetDeletedFileStatus() end
+--- @return void
+function AppCloseBlock() end
 
     
---- AppSetBlock
+--- AppDataValid
 ---
---- @hash 0x262AB456A3D21F93
---- @param blockName string (char*)
---- @return void
-function AppSetBlock(blockName) end
+--- @hash 0x846AA8E7D55EE5B6
+---
+--- @return boolean
+function AppDataValid() end
 
     
 --- AppDeleteAppData
@@ -102,13 +39,20 @@ function AppSetBlock(blockName) end
 function AppDeleteAppData(appName) end
 
     
---- AppSetString
+--- AppGetDeletedFileStatus
 ---
---- @hash 0x3FF2FCEC4B7721B4
+--- @hash 0xC9853A2BE3DED1A6
+---
+--- @return number (int)
+function AppGetDeletedFileStatus() end
+
+    
+--- AppGetFloat
+---
+--- @hash 0x1514FB24C02C2322
 --- @param property string (char*)
---- @param value string (char*)
---- @return void
-function AppSetString(property, value) end
+--- @return number (float)
+function AppGetFloat(property) end
 
     
 --- AppGetString
@@ -117,6 +61,14 @@ function AppSetString(property, value) end
 --- @param property string (char*)
 --- @return string (char*)
 function AppGetString(property) end
+
+    
+--- AppGetInt
+---
+--- @hash 0xD3A58A12C77D9D4B
+--- @param property string (char*)
+--- @return number (int)
+function AppGetInt(property) end
 
     
 --- AppHasSyncedData
@@ -139,11 +91,54 @@ function AppHasSyncedData(appName) end
 function AppSetApp(appName) end
 
     
---- AppClearBlock
+--- AppHasLinkedSocialClubAccount
 ---
---- @hash 0x5FE1DF3342DB7DBA
+--- @hash 0x71EEE69745088DA0
+---
+--- @return boolean
+function AppHasLinkedSocialClubAccount() end
+
+    
+--- AppSetFloat
+---
+--- @hash 0x25D7687C68E0DAA4
+--- @param property string (char*)
+--- @param value number (float)
+--- @return void
+function AppSetFloat(property, value) end
+
+    
+--- AppSaveData
+---
+--- @hash 0x95C5D356CDA6E85F
 ---
 --- @return void
-function AppClearBlock() end
+function AppSaveData() end
+
+    
+--- AppSetBlock
+---
+--- @hash 0x262AB456A3D21F93
+--- @param blockName string (char*)
+--- @return void
+function AppSetBlock(blockName) end
+
+    
+--- AppSetString
+---
+--- @hash 0x3FF2FCEC4B7721B4
+--- @param property string (char*)
+--- @param value string (char*)
+--- @return void
+function AppSetString(property, value) end
+
+    
+--- AppSetInt
+---
+--- @hash 0x607E8E3D3E4F9611
+--- @param property string (char*)
+--- @param value number (int)
+--- @return void
+function AppSetInt(property, value) end
 
     

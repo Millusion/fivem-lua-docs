@@ -1,10 +1,18 @@
 
---- N_0xf2ca003f167e21d2
+--- LoadingscreenGetLoadFreemode
 ---
---- @hash 0xF2CA003F167E21D2
+--- @hash 0xEF7D17BC6C85264C
 ---
---- @return number (int)
-function N_0xf2ca003f167e21d2() end
+--- @return boolean
+function LoadingscreenGetLoadFreemode() end
+
+    
+--- LoadingscreenGetLoadFreemodeWithEventName
+---
+--- @hash 0x8AA464D4E0F6ACCD
+---
+--- @return boolean
+function LoadingscreenGetLoadFreemodeWithEventName() end
 
     
 --- LoadingscreenIsLoadingFreemode
@@ -13,14 +21,6 @@ function N_0xf2ca003f167e21d2() end
 ---
 --- @return boolean
 function LoadingscreenIsLoadingFreemode() end
-
-    
---- LoadingscreenGetLoadFreemode
----
---- @hash 0xEF7D17BC6C85264C
----
---- @return boolean
-function LoadingscreenGetLoadFreemode() end
 
     
 --- LoadingscreenSetIsLoadingFreemode
@@ -41,12 +41,12 @@ function LoadingscreenSetIsLoadingFreemode(toggle) end
 function LoadingscreenSetLoadFreemodeWithEventName(toggle) end
 
     
---- LoadingscreenGetLoadFreemodeWithEventName
+--- N_0xf2ca003f167e21d2
 ---
---- @hash 0x8AA464D4E0F6ACCD
+--- @hash 0xF2CA003F167E21D2
 ---
---- @return boolean
-function LoadingscreenGetLoadFreemodeWithEventName() end
+--- @return number (int)
+function N_0xf2ca003f167e21d2() end
 
     
 --- LoadingscreenSetLoadFreemode

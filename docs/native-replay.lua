@@ -1,20 +1,14 @@
 
---- ActivateRockstarEditor
+--- Please note that you will need to call DO_SCREEN_FADE_IN after exiting the Rockstar Editor when you call this.
+--- 
+--- ```
+--- NativeDB Added Parameter 1: int p0
+--- ```
 ---
 --- @hash 0x49DA8145672B2725
 ---
 --- @return void
 function ActivateRockstarEditor() end
-
-    
---- ```
---- Disables some other rendering (internal)  
---- ```
----
---- @hash 0x5AD3932DAEB1E5D3
----
---- @return void
-function N_0x5ad3932daeb1e5d3() end
 
     
 --- ```
@@ -33,6 +27,16 @@ function IsInteriorRenderingDisabled() end
 --- @param p0 boolean
 --- @return void
 function N_0xe058175f8eafe79a(p0) end
+
+    
+--- ```
+--- Disables some other rendering (internal)  
+--- ```
+---
+--- @hash 0x5AD3932DAEB1E5D3
+---
+--- @return void
+function N_0x5ad3932daeb1e5d3() end
 
     
 --- ```

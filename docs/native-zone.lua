@@ -16,51 +16,6 @@ function ClearPopscheduleOverrideVehicleModel(scheduleId) end
 
     
 --- ```
---- cellphone range 1- 5 used for signal bar in iFruit phone  
---- ```
----
---- @hash 0x5F7B268D15BA0739
---- @param zoneId number (int)
---- @return number (int)
-function GetZoneScumminess(zoneId) end
-
-    
---- ```
---- Returns a hash representing which part of the map the given coords are located.  
---- Possible return values:  
---- (Hash of) city -> -289320599  
---- (Hash of) countryside -> 2072609373  
---- C# Example :  
---- Ped player = Game.Player.Character;  
---- Hash h = Function.Call<Hash>(Hash.GET_HASH_OF_MAP_AREA_AT_COORDS, player.Position.X, player.Position.Y, player.Position.Z);  
---- ```
----
---- @hash 0x7EE64D51E8498728
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @return Hash
-function GetHashOfMapAreaAtCoords(x, y, z) end
-
-    
---- ```
---- Only used once in the decompiled scripts. Seems to be related to scripted vehicle generators.  
---- Modified example from "am_imp_exp.c4", line 6406:  
---- /* popSchedules[0] = ZONE::GET_ZONE_POPSCHEDULE(ZONE::GET_ZONE_AT_COORDS(891.3, 807.9, 188.1));  
---- etc.  
---- */  
---- ZONE::OVERRIDE_POPSCHEDULE_VEHICLE_MODEL(popSchedules[index], vehicleHash);  
---- STREAMING::REQUEST_MODEL(vehicleHash);  
---- ```
----
---- @hash 0x5F7D596BAC2E7777
---- @param scheduleId number (int)
---- @param vehicleHash Hash
---- @return void
-function OverridePopscheduleVehicleModel(scheduleId, vehicleHash) end
-
-    
---- ```
 --- AIRP = Los Santos International Airport  
 --- ALAMO = Alamo Sea  
 --- ALTA = Alta  
@@ -150,6 +105,8 @@ function OverridePopscheduleVehicleModel(scheduleId, vehicleHash) end
 --- ZANCUDO = Zancudo River  
 --- ZP_ORT = Port of South Los Santos  
 --- ZQ_UAR = Davis Quartz  
+--- PROL = Prologue / North Yankton
+--- ISHeist = Cayo Perico Island
 --- ```
 ---
 --- @hash 0xCD90657D4C30E1CA
@@ -160,21 +117,22 @@ function OverridePopscheduleVehicleModel(scheduleId, vehicleHash) end
 function GetNameOfZone(x, y, z) end
 
     
---- SetZoneEnabled
+--- ```
+--- Returns a hash representing which part of the map the given coords are located.  
+--- Possible return values:  
+--- (Hash of) city -> -289320599  
+--- (Hash of) countryside -> 2072609373  
+--- C# Example :  
+--- Ped player = Game.Player.Character;  
+--- Hash h = Function.Call<Hash>(Hash.GET_HASH_OF_MAP_AREA_AT_COORDS, player.Position.X, player.Position.Y, player.Position.Z);  
+--- ```
 ---
---- @hash 0xBA5ECEEA120E5611
---- @param zoneId number (int)
---- @param toggle boolean
---- @return void
-function SetZoneEnabled(zoneId, toggle) end
-
-    
---- GetZonePopschedule
----
---- @hash 0x4334BC40AA0CB4BB
---- @param zoneId number (int)
---- @return number (int)
-function GetZonePopschedule(zoneId) end
+--- @hash 0x7EE64D51E8498728
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @return Hash
+function GetHashOfMapAreaAtCoords(x, y, z) end
 
     
 --- ```
@@ -284,5 +242,59 @@ function GetZoneFromNameId(zoneName) end
 --- @param z number (float)
 --- @return number (int)
 function GetZoneAtCoords(x, y, z) end
+
+    
+--- GetZonePopschedule
+---
+--- @hash 0x4334BC40AA0CB4BB
+--- @param zoneId number (int)
+--- @return number (int)
+function GetZonePopschedule(zoneId) end
+
+    
+--- Gets the zone scumminess level, used to calculate the cellphone signal strength.
+--- 
+--- ```cpp
+--- enum eZoneScumminess
+--- {
+---     SCUMMINESS_POSH = 0,
+---     SCUMMINESS_NICE = 1,
+---     SCUMMINESS_ABOVE_AVERAGE = 2,
+---     SCUMMINESS_BELOW_AVERAGE = 3,
+---     SCUMMINESS_CRAP = 4,
+---     SCUMMINESS_SCUM = 5
+--- }
+--- ```
+---
+--- @hash 0x5F7B268D15BA0739
+--- @param zoneId number (int)
+--- @return number (int)
+function GetZoneScumminess(zoneId) end
+
+    
+--- SetZoneEnabled
+---
+--- @hash 0xBA5ECEEA120E5611
+--- @param zoneId number (int)
+--- @param toggle boolean
+--- @return void
+function SetZoneEnabled(zoneId, toggle) end
+
+    
+--- ```
+--- Only used once in the decompiled scripts. Seems to be related to scripted vehicle generators.  
+--- Modified example from "am_imp_exp.c4", line 6406:  
+--- /* popSchedules[0] = ZONE::GET_ZONE_POPSCHEDULE(ZONE::GET_ZONE_AT_COORDS(891.3, 807.9, 188.1));  
+--- etc.  
+--- */  
+--- ZONE::OVERRIDE_POPSCHEDULE_VEHICLE_MODEL(popSchedules[index], vehicleHash);  
+--- STREAMING::REQUEST_MODEL(vehicleHash);  
+--- ```
+---
+--- @hash 0x5F7D596BAC2E7777
+--- @param scheduleId number (int)
+--- @param vehicleHash Hash
+--- @return void
+function OverridePopscheduleVehicleModel(scheduleId, vehicleHash) end
 
     

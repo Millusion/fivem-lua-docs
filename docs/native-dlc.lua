@@ -1,29 +1,62 @@
 
+--- GetExtraContentPackHasBeenInstalled
+---
+--- @hash 0x8D30F648014A92B5
+---
+--- @return boolean
+function GetExtraContentPackHasBeenInstalled() end
+
+    
+--- GetIsLoadingScreenActive
+---
+--- @hash 0x10D0A8F259E93EC9
+---
+--- @return boolean
+function GetIsLoadingScreenActive() end
+
+    
 --- ```
---- ------------------------  
---- | Belongs in DLC2 |  
---- ------------------------  
---- Only used once in scripts, in maintransition.  
---- maintransition.c4, line ~82432:  
---- if (PED::_7350823473013C02(PLAYER::PLAYER_PED_ID()) && (DECORATOR::_241FCA5B1AA14F75() == 0)) {  
----     g_2542A5 = a_1; // 'g_2542A5' used in 'building_controller.ysc' for IPL stuff?  
----     return 1;  
---- }  
---- Likely used solely for the players ped. The function it's in seems to only be used for initialization/quitting. Called among natives to discard scaleforms, disable frontend, fading in/out, etc. Neighboring strings to some calls include "HUD_JOINING", "HUD_QUITTING".  
+--- Example:
+--- DLC::IS_DLC_PRESENT($\mpbusiness2\);
+--- ($ = gethashkey)
+--- bruteforce these:
+--- 0xB119F6D
+--- 0x96F02EE6
+--- ```
+---
+--- @hash 0x812595A0644CE1DE
+--- @param dlcHash Hash
+--- @return boolean
+function IsDlcPresent(dlcHash) end
+
+    
+--- ```
+--- Sets the value of the specified variable to 0.
+--- Always returns true.
+--- ```
+---
+--- @hash 0x46E2B844905BC5F0
+--- @param variable table (BOOL*)
+--- @param unused any
+--- @return boolean
+function HasCloudRequestsFinished(variable, unused) end
+
+    
+--- ```
+--- Only used once in scripts, in maintransition.
+--- maintransition.c4, line ~82432:
+--- if (PED::_7350823473013C02(PLAYER::PLAYER_PED_ID()) && (DECORATOR::_241FCA5B1AA14F75() == 0)) {
+---     g_2542A5 = a_1; // 'g_2542A5' used in 'building_controller.ysc' for IPL stuff?
+---     return 1;
+--- }
+--- Likely used solely for the players ped. The function it's in seems to only be used for initialization/quitting. Called among natives to discard scaleforms, disable frontend, fading in/out, etc. Neighboring strings to some calls include "HUD_JOINING", "HUD_QUITTING".
+--- Most likely ARE_*
 --- ```
 ---
 --- @hash 0x241FCA5B1AA14F75
 ---
 --- @return boolean
 function N_0x241fca5b1aa14f75() end
-
-    
---- N_0xa213b11dff526300
----
---- @hash 0xA213B11DFF526300
----
---- @return boolean
-function N_0xa213b11dff526300() end
 
     
 --- N_0x9489659372a81585
@@ -34,12 +67,44 @@ function N_0xa213b11dff526300() end
 function N_0x9489659372a81585() end
 
     
---- GetExtraContentPackHasBeenInstalled
+--- GET_IS_LOADING_\*
+--- 
+--- ```
+--- NativeDB Introduced: v1734
+--- ```
 ---
---- @hash 0x8D30F648014A92B5
+--- @hash 0xC4637A6D03C24CC3
 ---
 --- @return boolean
-function GetExtraContentPackHasBeenInstalled() end
+function N_0xc4637a6d03c24cc3() end
+
+    
+--- N_0xa213b11dff526300
+---
+--- @hash 0xA213B11DFF526300
+---
+--- @return boolean
+function N_0xa213b11dff526300() end
+
+    
+--- N_0xf2e07819ef1a5289
+---
+--- @hash 0xF2E07819EF1A5289
+---
+--- @return boolean
+function N_0xf2e07819ef1a5289() end
+
+    
+--- ```
+--- This loads the GTA:O dlc map parts (high end garages, apartments).
+--- Works in singleplayer.
+--- In order to use GTA:O heist IPL's you have to call this native with the following params: SET_INSTANCE_PRIORITY_MODE(1);
+--- ```
+---
+--- @hash 0x0888C3502DBBEEF5
+---
+--- @return void
+function OnEnterMp() end
 
     
 --- ```
@@ -53,69 +118,5 @@ function GetExtraContentPackHasBeenInstalled() end
 ---
 --- @return void
 function OnEnterSp() end
-
-    
---- ```
---- This loads the GTA:O dlc map parts (high end garages, apartments).
---- Works in singleplayer.
---- In order to use GTA:O heist IPL's you have to call this native with the following params: _9BAE5AD2508DF078(1);
---- ```
----
---- @hash 0x0888C3502DBBEEF5
----
---- @return void
-function OnEnterMp() end
-
-    
---- ```
---- Sets the value of the specified variable to 0.  
---- Always returns true.  
---- bool _NULLIFY(void* variable, int unused)  
---- {  
----     *variable = NULL;  
----     return true;  
---- }  
---- ```
---- 
---- ```
---- NativeDB Parameter 0: BOOL* variable
---- ```
----
---- @hash 0x46E2B844905BC5F0
---- @param variable any
---- @param unused any
---- @return boolean
-function HasCloudRequestsFinished(variable, unused) end
-
-    
---- N_0xf2e07819ef1a5289
----
---- @hash 0xF2E07819EF1A5289
----
---- @return boolean
-function N_0xf2e07819ef1a5289() end
-
-    
---- GetIsLoadingScreenActive
----
---- @hash 0x10D0A8F259E93EC9
----
---- @return boolean
-function GetIsLoadingScreenActive() end
-
-    
---- ```
---- Example:  
---- DLC2::IS_DLC_PRESENT($\mpbusiness2\);  
---- ($ = gethashkey)  
---- bruteforce these:  
---- 0xB119F6D  
---- 0x96F02EE6  
---- ```
----
---- @hash 0x812595A0644CE1DE
---- @param dlcHash Hash
---- @return boolean
-function IsDlcPresent(dlcHash) end
 
     
